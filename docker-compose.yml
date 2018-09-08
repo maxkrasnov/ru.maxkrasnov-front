@@ -1,0 +1,8 @@
+version: '3'
+services:
+  maxkrasnov-front:
+      build:
+        context: .
+      command: ["npm", "run", "production"]
+      ports:
+        - "9000:9000"

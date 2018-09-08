@@ -1,0 +1,38 @@
+.form {
+  max-width: 300px;
+  margin: auto;
+  &__field {
+    margin-bottom: 5px;
+    &_submit {
+      padding-top: 10px;
+      text-align: center;
+    }
+    input, textarea {
+      height: 30px;
+      border: 1px solid $borders;
+      outline: none;
+      box-shadow: none;
+      width: 100%;
+      padding: 7px;
+      transition: border .4s;
+      &:focus {
+        border: 1px solid $primary;
+      }
+    }
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    input {
+      &[type=submit] {
+        font-family: 'Roboto Slab', serif;
+        width: auto;
+        margin: auto;
+        background: $primary;
+        border: $primary;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+}

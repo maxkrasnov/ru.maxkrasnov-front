@@ -1,0 +1,22 @@
+.progress {
+  width: 33.3333333%;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-right: 30px;
+  & > &__title {
+    font-family: 'Roboto Slab', serif;
+  }
+  &__level {
+    position: relative;
+    background: $gray;
+    height: 5px;
+    &-line {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: $primary;
+      transition: width .4s;
+    }
+  }
+}
