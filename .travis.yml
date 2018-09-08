@@ -6,7 +6,11 @@ node_js:
   - 8
 
 notifications:
-  - email: false
+  - email: true
+
+branches:
+ only:
+ - master
 
 script:
   - ./make deploy

@@ -31,7 +31,7 @@ export default class MainMenu extends Component {
             <li><a href={'https://ru.stackoverflow.com/users/243667/maxkrasnov'} target={'_blank'} className={'icon-stackoverflow'}> </a></li>
           </ul>
           <div className={'menu__footer'}>
-            <a target={'_blank'} href={'/'}>исходники сайта</a><br/>
+            <a target={'_blank'} href={'https://github.com/maxkrasnov/ru.maxkrasnov-front'}>исходники сайта</a><br/>
             &copy; {new Date().getFullYear()}
           </div>
         </div>
