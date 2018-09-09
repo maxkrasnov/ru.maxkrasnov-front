@@ -7,9 +7,6 @@ import MainMenu from './components/mainMenu';
 import Page404 from './views/404';
 import Loader from './components/loader';
 
-import store from './redux/store';
-import onEnterRoute from './utils/onEnterRoute'
-
 /**
  * Общий каркас приложения
  */
@@ -25,7 +22,7 @@ export default class Index extends Component {
           <div className={'app__content'}>
             <Switch>
               {routesList.routes.map(({ path, component, exact }, i) =>
-                <Route onEnter={onEnterRoute(store)} key={Math.random() + 'ROUTE_'} exact={exact} path={path} component={component} />
+                <Route key={Math.random() + 'ROUTE_'} exact={exact} path={path} component={component} />
               )}
               {routesList.redirects.map(({ from, to, status }, i) =>
                 <Redirect key={Math.random() + 'REDIRECT_'} from={from} to={to} status={status} />
