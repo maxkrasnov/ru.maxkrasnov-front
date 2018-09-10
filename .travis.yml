@@ -2,8 +2,6 @@ language: node_js
 
 node_js:
   - stable
-  - lts/*
-  - 8
 
 notifications:
   - email: true
@@ -16,4 +14,4 @@ services:
   - docker
 
 script:
-  - make deploy
+  - make build
