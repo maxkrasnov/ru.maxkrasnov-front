@@ -8,5 +8,5 @@ run:
 deploy:
 	docker-compose build
 	docker-compose up
-build
+build:
     npm run build
