@@ -30,6 +30,12 @@ export default class Feedback extends Component {
     })
   }
 
+  componentDidMount() {
+    document.getElementsByClassName('app')[0]
+      .classList
+      .remove('app_open-menu')
+  }
+
   render() {
     return (
       <div>

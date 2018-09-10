@@ -28,10 +28,16 @@ axios.interceptors.response.use((response) => {
     throw new Error()
   }
   store.dispatch(actions.uploaded())
+  document.getElementsByClassName('app')[0]
+    .classList
+    .remove('app_open-menu')
   return response;
 }, (error) => {
   store.dispatch(actions.uploaded())
   Router.push('/404')
+  document.getElementsByClassName('app')[0]
+    .classList
+    .remove('app_open-menu')
   return Promise.reject(error)
 })
 

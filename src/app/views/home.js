@@ -11,12 +11,6 @@ class Home extends Component {
     return store.dispatch(actions.getPosts(params.page))
   }
 
-  nextPage = () => {
-    let { page } = this.props;
-    page = page + 1
-    this.props.getPosts(page);
-  }
-
   componentDidMount() {
     this.props.getPosts(this.props.match.params.page);
   }
@@ -25,11 +19,11 @@ class Home extends Component {
     return (
       <div>
         <Helmet>
-          <title>Максим Краснов - Full-stack веб-разработчик PHP/JS/Golang</title>
+          <title>Максим Краснов - Full-stack веб-разработчик PHP/JS/Golang/Python</title>
           <meta name="description" content={'Привет! Меня зовут Максим. Увлекаюсь веб-разработкой, \n' +
           'пишу на языках PHP, JS, GO, могу писать как фронт так и бекэнд. ' +
           'Проф скилы: Laravel, Bitrix, Битрикс, ReactJS, ReactNative, Angular, NodeJS'} />
-          <meta name="keywords" content={'Laravel, Bitrix, ReactJS, ReactNative, PHP, Веб-разработка, Максим, Краснов'}/>
+          <meta name="keywords" content={'Laravel, Bitrix, ReactJS, ReactNative, PHP, Golang, Python, Веб-разработка, Максим, Краснов'}/>
         </Helmet>
         <PostList page={this.props.page} data={this.props.posts} isLoaded={this.props.isLoaded}/>
       </div>

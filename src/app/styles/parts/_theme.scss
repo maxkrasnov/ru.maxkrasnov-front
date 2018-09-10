@@ -22,6 +22,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+h1 {
+  span {
+    font-size: 30px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+}
+
 a {
   outline: none;
 }
@@ -44,6 +53,19 @@ p {
 
 .app {
   height: 100%;
+  &.app_open-menu {
+    @media (max-width: 768px) {
+      .app__menu {
+        left: 0px;
+      }
+      .menu__mobile-btn {
+        left: 195px;
+      }
+      .app__content {
+        opacity: 0;
+      }
+    }
+  }
   &__container {
     max-width: 869px;
     margin-right: auto;
@@ -60,6 +82,8 @@ p {
     z-index: 9;
     @media (max-width: 768px) {
       left: -180px;
+      background: #f9f9f9;
+      transition: left .4s ease-in-out;
     }
   }
   &__content {
@@ -75,6 +99,7 @@ p {
       padding-top: 60px;
       padding-left: 15px;
       padding-right: 15px;
+      transition: opacity .4s ease-in-out;
     }
   }
   &__footer {

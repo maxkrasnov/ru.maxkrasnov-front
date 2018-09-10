@@ -2,9 +2,20 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
 export default class MainMenu extends Component {
+  onMobileBtnClick = () => {
+    document.getElementsByClassName('app')[0]
+      .classList
+      .toggle('app_open-menu')
+  }
+
   render() {
     return (
       <div className={'menu'}>
+        <div className={'menu__mobile-btn'} onClick={() => { this.onMobileBtnClick() }}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div className={'menu__content'}>
           <div className={'menu__logo'}>
             <a href={'/'} className={'menu__logo-name'}>

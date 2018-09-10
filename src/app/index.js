@@ -6,7 +6,6 @@ import routesList from './routes/index';
 import MainMenu from './components/mainMenu';
 import Page404 from './views/404';
 import Loader from './components/loader';
-
 /**
  * Общий каркас приложения
  */

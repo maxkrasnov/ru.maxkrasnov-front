@@ -12,5 +12,8 @@ branches:
  only:
  - master
 
+services:
+  - docker
+
 script:
-  - ./make deploy
+  - make deploy
