@@ -21,6 +21,11 @@ services:
 script:
   - make build
 
+env:
+  global:
+  - 'TRAVIS_KEY=[TRAVIS_KEY]'
+  - 'TRAVIS_USER=[TRAVIS_USER]'
+
 after_success:
   - echo 'Run deploy to maxkrasnov.ru server'
   - touch ~/.ssh/id_rsa.pub
