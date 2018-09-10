@@ -25,4 +25,4 @@ after_success:
   - echo 'Run deploy to maxkrasnov.ru server'
   - touch ~/.ssh/id_rsa.pub
   - echo '$TRAVIS_KEY' >> ~/.ssh/id_rsa.pub
-  - ssh $TRAVIS_USER@maxkrasnov.ru 'git clone git@github.com:maxkrasnov/ru.maxkrasnov-front.git&&cd ru.maxkrasnov-front&&make deploy'
+  - ssh -o "StrictHostKeyChecking no" $TRAVIS_USER@maxkrasnov.ru 'git clone git@github.com:maxkrasnov/ru.maxkrasnov-front.git&&cd ru.maxkrasnov-front&&make deploy'
