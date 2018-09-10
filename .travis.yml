@@ -25,9 +25,11 @@ env:
   global:
   - 'TRAVIS_KEY=[TRAVIS_KEY]'
   - 'TRAVIS_USER=[TRAVIS_USER]'
-
+  
 after_success:
   - echo 'Run deploy to maxkrasnov.ru server'
+  - echo "${TRAVIS_KEY}"
+  - echo "${TRAVIS_USER}"
   - touch ~/.ssh/id_rsa.pub
   - echo "${TRAVIS_KEY}" >> ~/.ssh/id_rsa.pub
   - ssh ${TRAVIS_USER}@maxkrasnov.ru 'git clone git@github.com:maxkrasnov/ru.maxkrasnov-front.git&&cd ru.maxkrasnov-front&&make deploy'
