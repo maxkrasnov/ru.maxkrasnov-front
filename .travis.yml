@@ -23,4 +23,4 @@ script:
 
 after_success:
   - echo 'Run deploy to maxkrasnov.ru server!'
-  - echo "${TRAVIS_USER}"
+  - echo $TRAVIS_USER
