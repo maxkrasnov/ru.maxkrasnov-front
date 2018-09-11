@@ -1,7 +1,5 @@
 language: node_js
 
-sudo: true
-
 node_js:
   - stable
 
@@ -25,5 +23,5 @@ script:
 
 after_success:
   - echo 'Run deploy to maxkrasnov.ru server'
-  - sudo echo -e "Host maxkrasnov.ru\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo -e "Host maxkrasnov.ru\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - sshpass -p '$TRAVIS_PASSWORD' ssh -oStrictHostKeyChecking=no $TRAVIS_USER@maxkrasnov.ru 'git clone git@github.com:maxkrasnov/ru.maxkrasnov-front.git&&cd ru.maxkrasnov-front&&make deploy'
