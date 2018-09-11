@@ -22,5 +22,5 @@ script:
   - make build
 
 after_success:
-  - echo 'Run deploy to maxkrasnov.ru server'
+  - echo 'Run deploy to maxkrasnov.ru server!'
   - sshpass -p '$TRAVIS_PASSWORD' ssh -oStrictHostKeyChecking=no $TRAVIS_USER@maxkrasnov.ru 'git clone git@github.com:maxkrasnov/ru.maxkrasnov-front.git&&cd ru.maxkrasnov-front&&make deploy'
