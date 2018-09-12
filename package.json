@@ -6,7 +6,7 @@
     "testing": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack-cli --mode production --progress --colors --config webpack.config.production.js && webpack-cli --mode production --progress --colors --config webpack.config.server.js",
     "development": "webpack-cli --mode development --progress --colors --config webpack.config.server.js && node dist/server.js && webpack-cli --progress --colors --config webpack.config.development.js",
-    "production": "webpack-cli --mode production --progress --colors --config webpack.config.production.js && webpack-cli --mode production --progress --colors --config webpack.config.server.js && node dist/server.js"
+    "production": "webpack-cli --mode production --progress --colors --config webpack.config.production.js && webpack-cli --mode production --progress --colors --config webpack.config.server.js && nohup node dist/server.js"
   },
   "keywords": [
     "ReactJS"
