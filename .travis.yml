@@ -9,9 +9,6 @@ notifications:
 addons:
   ssh_known_hosts:
   - maxkrasnov.ru
-  apt:
-    packages:
-    - openssl
 branches:
   only:
   - master
