@@ -21,7 +21,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - ssh $TRAVIS_USER@maxkrasnov.ru 'rm -rf ru.maxkrasnov-front&&git clone git@github.com:maxkrasnov/ru.maxkrasnov-front.git&&cd ru.maxkrasnov-front&&make deploy'
+    - ssh $TRAVIS_USER@maxkrasnov.ru 'rm -rf ru.maxkrasnov-front&&git clone https://github.com/maxkrasnov/ru.maxkrasnov-front.git&&cd ru.maxkrasnov-front&&make deploy'
   on:
     branch: master
 before_deploy:
