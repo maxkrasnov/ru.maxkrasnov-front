@@ -10,7 +10,7 @@ notifications:
 addons:
   apt:
     packages:
-    - sshpass
+    - openssl
   sshknownhosts:
     - 95.213.237.4
 
