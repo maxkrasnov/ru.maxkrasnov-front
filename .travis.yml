@@ -4,12 +4,16 @@ node_js:
   - stable
 
 notifications:
-  - email: true
+  email:
+    onfailure: change
+    onsuccess: change
 
 addons:
   apt:
     packages:
     - sshpass
+  sshknownhosts:
+    - 95.213.237.4
 
 branches:
  only:
@@ -24,4 +28,4 @@ script:
 after_success:
   - echo 'Run deploy to maxkrasnov.ru server'
   - echo -e "Host maxkrasnov.ru\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - sshpass -p '$TRAVIS_PASSWORD' ssh -oStrictHostKeyChecking=no $TRAVIS_USER@maxkrasnov.ru 'git clone git@github.com:maxkrasnov/ru.maxkrasnov-front.git&&cd ru.maxkrasnov-front&&make deploy'
+  - sshpass -p '$TRAVIS_PASSWORD' ssh -oStrictHostKeyChecking=no $TRAVIS_USER@95.213.237.4 'git clone git@github.com:maxkrasnov/ru.maxkrasnov-front.git&&cd ru.maxkrasnov-front&&make deploy'
