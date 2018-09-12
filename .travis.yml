@@ -22,7 +22,7 @@ services:
   - docker
 
 script:
-  -make build
+  - make build
 
 after_success:
   - echo 'Run deploy to maxkrasnov.ru server'
@@ -30,4 +30,4 @@ after_success:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_b0c2bc9d07da_key -iv $encrypted_b0c2bc9d07da_iv
-  -in deploy.enc -out deploy -d
+  - in deploy.enc -out deploy -d
