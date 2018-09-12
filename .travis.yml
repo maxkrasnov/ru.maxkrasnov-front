@@ -21,7 +21,7 @@ branches:
 services:
   - docker
 
-before_install:
+before_script:
   - openssl aes-256-cbc -K $encrypted_b0c2bc9d07da_key -iv $encrypted_b0c2bc9d07da_iv
   - in deploy.enc -out deploy -d
   - chmod 600 deploy && mv deploy ~/.ssh/idrsa
