@@ -11,8 +11,7 @@ addons:
   - maxkrasnov.ru
   apt:
     packages:
-      - sshpass
-
+    - sshpass
 branches:
   only:
   - master
@@ -27,6 +26,8 @@ deploy:
   on:
     branch: master
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_b0c2bc9d07da_key -iv $encrypted_b0c2bc9d07da_iv -in deploy.enc -out deploy -d
+- openssl aes-256-cbc -K $encrypted_b0c2bc9d07da_key -iv $encrypted_b0c2bc9d07da_iv
+  -in deploy.enc -out deploy -d
 - eval "$(ssh-agent -s)"
+- chmod 600 deploy
 - ssh-add deploy
