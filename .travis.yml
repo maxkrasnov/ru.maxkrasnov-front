@@ -21,7 +21,7 @@ services:
   - docker
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_b0c2bc9d07da_key -iv $encrypted_b0c2bc9d07da_iv
+  - openssl aes-256-cbc -k "$encrypted_b0c2bc9d07da_key" -iv "$encrypted_b0c2bc9d07da_iv"
 
 script:
   - make build
