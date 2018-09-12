@@ -2,13 +2,15 @@ language: node_js
 node_js:
   - stable
 
+sudo: required
+
 notifications:
   email:
     onfailure: change
     onsuccess: change
 
 addons:
-  sshknownhosts:
+  ssh_known_hosts:
     - maxkrasnov.ru
 
 branches:
