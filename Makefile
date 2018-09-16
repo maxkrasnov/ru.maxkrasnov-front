@@ -7,6 +7,6 @@ run:
 # обрабатывает команду make deploy - запускает сборку докер контейнеров
 deploy:
 	docker-compose build
-	docker-compose up
+	docker-compose up -d
 build:
 	npm run build
