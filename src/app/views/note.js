@@ -17,7 +17,7 @@ class Note extends Component {
 
   render() {
     return (
-      typeof this.props.post.title !== 'undefined' ? <Page media={this.props.post.media} description={this.props.post.preview_text} content={this.props.post.detail_text} category={this.props.post.category} date={this.props.post.CreatedAt} title={this.props.post.title}/> : null
+      typeof this.props.post.title !== 'undefined' ? <Page html={true} media={this.props.post.media} description={this.props.post.preview_text} content={this.props.post.detail_text} category={this.props.post.category} date={this.props.post.CreatedAt} title={this.props.post.title}/> : null
     )
   }
 }
