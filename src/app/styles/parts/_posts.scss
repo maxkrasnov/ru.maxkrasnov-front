@@ -92,6 +92,10 @@
   }
   &__description {
     margin-top: 20px;
+    text-align: justify;
+    p {
+      text-align: justify;
+    }
   }
   &__more {
     text-align: center;
@@ -186,5 +190,9 @@
   }
   &__content {
     margin-top: 20px;
+    text-align: justify;
+    p {
+      text-align: justify;
+    }
   }
 }
