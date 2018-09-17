@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- stable
+  - stable
 sudo: required
 notifications:
   email:
@@ -8,10 +8,7 @@ notifications:
     onsuccess: change
 addons:
   ssh_known_hosts:
-  - maxkrasnov.ru
-  apt:
-    packages:
-    - sshpass
+    - maxkrasnov.ru
 branches:
   only:
   - master
