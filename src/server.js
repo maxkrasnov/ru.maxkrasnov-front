@@ -131,7 +131,11 @@ app.get('*', async (req, res) => {
 })
 
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+  if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3009');
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', 'https://api.maxkrasnov.ru');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
