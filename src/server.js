@@ -117,7 +117,11 @@ app.get('*', async (req, res) => {
         // для генерации мета-данных
         const helmetData = helmet.renderStatic();
         if (context.url) {
-          res.redirect(context.status, 'http://' + req.headers.host + context.url);
+          if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+            res.redirect(context.status, 'http://' + req.headers.host + context.url);
+          } else {
+            res.redirect(context.status, 'https://' + req.headers.host + context.url);
+          }
         } else if(routePath === null || routePath.path == '/404') {
           // выдача 404 страницы
           res.status(404).send(defaultPage(html, preloadState, helmetData))
