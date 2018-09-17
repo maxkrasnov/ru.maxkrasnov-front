@@ -9,6 +9,7 @@ notifications:
 addons:
   ssh_known_hosts:
   - maxkrasnov.ru
+  - maxkrasnov.ru:$TRAVIS_PORT
   apt:
     packages:
     - sshpass
