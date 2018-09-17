@@ -13,8 +13,8 @@ class Page extends Component {
       <article className={'post-detail'}>
         <Helmet>
           <title>Максим Краснов - {stripTags(this.props.title)}</title>
-          <meta name="description" content={this.props.description} />
-          <meta name="keywords" content={getWords(this.props.description)} />
+          <meta name="description" content={stripTags(this.props.description)} />
+          <meta name="keywords" content={getWords(stripTags(this.props.description))} />
         </Helmet>
         <div className={'post-detail__header'}>
           <h1 className={'post-detail__title'}>

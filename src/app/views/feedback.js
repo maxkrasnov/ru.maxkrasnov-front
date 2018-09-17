@@ -23,7 +23,11 @@ export default class Feedback extends Component {
       name, email, question,
     }).then(() => {
       this.setState({ success: true }, () => {
-        document.getElementById('feedback-form').reset()
+        this.setState({
+          name: '',
+          email: '',
+          question: '',
+        })
       })
     }).catch(() => {
       this.setState({ success: false })
@@ -31,6 +35,7 @@ export default class Feedback extends Component {
   }
 
   componentDidMount() {
+    // говнокод, но так быстрее и проще, не хотел париться
     document.getElementsByClassName('app')[0]
       .classList
       .remove('app_open-menu')
@@ -46,7 +51,7 @@ export default class Feedback extends Component {
         { this.state.success ? <blockquote>
             Ваш вопрос отправлен мне, постараюсь как можно быстрее ответить на него. Спасибо.
           </blockquote> : null }
-        <form className={'form'} id={'feedback-form'}>
+        <form ref={(form) => { this.form = form }} className={'form'} id={'feedback-form'}>
           <div className={'form__field'}>
             <input type={'text'} onChange={ (e) => { this.setState({ name: e.target.value }) }} value={this.state.name} placeholder={'Ваше имя'}/>
           </div>
