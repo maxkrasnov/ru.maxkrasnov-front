@@ -7,9 +7,9 @@ const defaultPage = (html, preloadState, helmet, version = '1.0.0') => {
             <!-- Developed by Max Krasnov <me@maxkrasnov.ru> -->
             <link rel="icon" href="/favicon.ico" type="image/ico" />
             <link rel="stylesheet" href="/assets/app.bundle.css?v=${version}">
-            ${helmet.title.toString()}
-            ${helmet.meta.toString()}
-            ${helmet.link.toString()}
+            ${typeof helmet.title !== 'undefined' ? helmet.title.toString() : ''}
+            ${typeof helmet.meta !== 'undefined' ? helmet.meta.toString() : ''}
+            ${typeof helmet.link !== 'undefined' ? helmet.link.toString() : ''}
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
