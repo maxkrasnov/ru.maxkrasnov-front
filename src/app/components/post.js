@@ -55,7 +55,7 @@ const compactSizePost = (post) => {
           </div>
         </div>
         <div className={'post__description'}>
-          <p dangerouslySetInnerHTML={{ __html: post.preview_text }}></p>
+          <p dangerouslySetInnerHTML={{ __html: typeof post.description !== 'undefined' ? post.description : post.preview_text }}></p>
         </div>
       </div>
     </article>
