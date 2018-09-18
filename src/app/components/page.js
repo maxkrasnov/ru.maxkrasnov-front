@@ -15,6 +15,7 @@ class Page extends Component {
           <title>Максим Краснов - {stripTags(this.props.title)}</title>
           <meta name="description" content={stripTags(this.props.description)} />
           <meta name="keywords" content={getWords(stripTags(this.props.description))} />
+          {typeof this.props.canonical !== 'undefined' ? <link rel="canonical" href={this.props.canonical} /> : ''}
         </Helmet>
         <div className={'post-detail__header'}>
           <h1 className={'post-detail__title'}>
@@ -40,6 +41,7 @@ class Page extends Component {
 }
 
 Page.propTypes = {
+  canonical: PropTypes.string,
   title: PropTypes.string, // заголовок страницы
   category: PropTypes.any, // категория страницы
   media: PropTypes.any, // медиа контент
