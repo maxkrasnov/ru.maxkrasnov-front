@@ -29,7 +29,7 @@ class Works extends Component {
 
           В данном разделе указаны работы, в которых я принимал участие или реализовывал полностью сам.
         </div>}/>
-        { this.props.isLoaded ? <PostList page={this.props.page} data={this.props.works} compact={true}/> : null }
+        { this.props.isLoaded ? <PostList location={this.props.match} page={this.props.page} data={this.props.works} compact={true}/> : null }
       </div>
     )
   }

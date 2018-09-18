@@ -16,13 +16,14 @@ export default class PostList extends Component {
             <Post data={item} key={i} compact={this.props.compact}/>
           )
         })}
-        <Paginator page={this.props.page} itemsLength={this.props.data.length}/>
+        <Paginator location={this.props.location} page={this.props.page} itemsLength={this.props.data.length}/>
       </div>
     )
   }
 }
 
 PostList.propTypes = {
-  data: PropTypes.array, // массив постов/работ
+  location: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired, // массив постов/работ
   compact: PropTypes.bool, // вид поста: компактный или фулл
 }

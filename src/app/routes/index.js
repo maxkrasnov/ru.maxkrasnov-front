@@ -32,6 +32,11 @@ export default {
             exact: true,
         },
         {
+            path: '/works/page/:page',
+            component: Works,
+            exact: true,
+        },
+        {
             path: '/hh',
             component: HH,
             exact: true,
