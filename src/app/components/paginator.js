@@ -15,8 +15,8 @@ class Paginator extends Component {
     return (
       this.props.itemsLength > 0 ?
         <div className={'b-pagination'}>
-          { prev > 0 ? <NavLink className={'b-pagination__prev'} to={`/page/${prev}`}>{'<'} Пред.</NavLink> : null }
-          { this.props.itemsLength > 9 ? <NavLink className={'b-pagination__next'} to={`/page/${next}`}>След. {'>'} </NavLink> : null }
+          { prev > 0 ? <NavLink className={'b-pagination__prev'} to={`page/${prev}`}>{'<'} Пред.</NavLink> : null }
+          { this.props.itemsLength > 9 ? <NavLink className={'b-pagination__next'} to={`page/${next}`}>След. {'>'} </NavLink> : null }
         </div>
         : null
     )
