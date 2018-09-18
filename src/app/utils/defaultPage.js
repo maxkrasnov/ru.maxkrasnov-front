@@ -1,4 +1,4 @@
-const defaultPage = (html, preloadState, helmet, version = '1.0.0') => {
+const defaultPage = (html, preloadState, helmet, version = '1.0.6') => {
     return `<!doctype html>
         <html>
           <head>

@@ -25,7 +25,7 @@ class Home extends Component {
           'Проф скилы: Laravel, Bitrix, Битрикс, ReactJS, ReactNative, Angular, NodeJS'} />
           <meta name="keywords" content={'Laravel, Bitrix, ReactJS, ReactNative, PHP, Golang, Python, Веб-разработка, Максим, Краснов'}/>
         </Helmet>
-        <PostList page={this.props.page} data={this.props.posts} isLoaded={this.props.isLoaded}/>
+        <PostList location={this.props.match} page={this.props.page} data={this.props.posts} isLoaded={this.props.isLoaded}/>
       </div>
     )
   }
