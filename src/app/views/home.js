@@ -20,6 +20,7 @@ class Home extends Component {
       <div>
         <Helmet>
           <title>Максим Краснов - Full-stack веб-разработчик PHP/JS/Golang/Python</title>
+          <link rel="canonical" href="https://maxkrasnov.ru/" />
           <meta name="description" content={'Привет! Меня зовут Максим. Увлекаюсь веб-разработкой, \n' +
           'пишу на языках PHP, JS, GO, могу писать как фронт так и бекэнд. ' +
           'Проф скилы: Laravel, Bitrix, Битрикс, ReactJS, ReactNative, Angular, NodeJS'} />
