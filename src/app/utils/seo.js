@@ -13,6 +13,9 @@ export const stripTags = (html) => {
  * @returns {string}
  */
 export const getWords = (text) => {
-  const words = text.split(' ')
-  return words.join(', ')
+  let words = text.split(' ')
+  words = words.filter((w) => {
+    return w.length > 4
+  })
+  return words.join(', ').replace(/,,/g, ',')
 }

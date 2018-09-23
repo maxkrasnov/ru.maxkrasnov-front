@@ -19,7 +19,7 @@ deploy:
   skip_cleanup: true
   script:
   - ssh $TRAVIS_USER@maxkrasnov.ru 'rm -rf ru.maxkrasnov-front&&git clone https://github.com/maxkrasnov/ru.maxkrasnov-front.git&&cd
-    ru.maxkrasnov-front&&make deploy'
+    ru.maxkrasnov-front&&make deploy APP_VERSION=${TRAVIS_TAG}'
   on:
     branch: master
 before_deploy:

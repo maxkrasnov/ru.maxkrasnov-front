@@ -11,6 +11,8 @@ html, body {
   line-height: 24px;
   word-spacing: 1px;
   height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 #root {

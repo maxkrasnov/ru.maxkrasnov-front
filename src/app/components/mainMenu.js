@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux';
 
-export default class MainMenu extends Component {
+import { NavLink, withRouter } from 'react-router-dom'
+
+class MainMenu extends Component {
   onMobileBtnClick = () => {
     document.getElementsByClassName('app')[0]
       .classList
@@ -42,7 +44,9 @@ export default class MainMenu extends Component {
             <li><a href={'https://ru.stackoverflow.com/users/243667/maxkrasnov'} target={'_blank'} className={'icon-stackoverflow'}> </a></li>
           </ul>
           <div className={'menu__footer'}>
-            <a target={'_blank'} href={'https://github.com/maxkrasnov/ru.maxkrasnov-front'}>исходники сайта</a><br/>
+            <div><b>Исходники:</b></div>
+            <a target={'_blank'} href={'https://github.com/maxkrasnov/ru.maxkrasnov-front'}>фронт: {this.props.frontVersion}</a><br/>
+            <a target={'_blank'} href={'https://github.com/maxkrasnov/ru.maxkrasnov'}>бэк: {this.props.backVersion}</a><br/>
             &copy; {new Date().getFullYear()}
           </div>
         </div>
@@ -50,3 +54,12 @@ export default class MainMenu extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    frontVersion: state.app.front,
+    backVersion: state.app.back,
+  }
+}
+
+export default withRouter(connect(mapStateToProps)(MainMenu));

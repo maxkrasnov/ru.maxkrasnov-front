@@ -6,7 +6,10 @@ run:
 	npm run production
 # обрабатывает команду make deploy - запускает сборку докер контейнеров
 deploy:
+    ifeq ($(APP_VERSION),)
+    APP_VERSION := 0
+    endif
 	docker-compose build
-	docker-compose up -d
+	export APP_VERSION=$(APP_VERSION)&&docker-compose up -d
 build:
 	npm run build

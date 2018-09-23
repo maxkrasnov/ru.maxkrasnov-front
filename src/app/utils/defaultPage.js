@@ -1,4 +1,4 @@
-const defaultPage = (html, preloadState, helmet, version = '1.0.9') => {
+const defaultPage = (html, preloadState, helmet, version = '1.0.0') => {
     return `<!doctype html>
         <html>
           <head>
@@ -21,7 +21,8 @@ const defaultPage = (html, preloadState, helmet, version = '1.0.9') => {
             <noscript>Для корректной работы сайта <strong>необходимо включить поддержку JavaScript</strong></noscript>
             <div id="root">${html}</div>
             <script>
-              console.log('%c Developed by Max Krasnov <me@maxkrasnov.ru>.', 'color: #ffffff; background: #444444')
+              console.log('%c Developed by Max Krasnov <me@maxkrasnov.ru>', 'color: #ffffff; background: #444444');
+              console.log('front version: ${version}');
               window.__PRELOAD_STATE__ = ${JSON.stringify(preloadState).replace(/</g, '\\\u003c')}
             </script>
             <script type="text/javascript" src="/assets/app.bundle.js?v=${version}"></script>

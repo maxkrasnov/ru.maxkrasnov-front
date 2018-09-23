@@ -6,3 +6,5 @@ services:
       command: ["npm", "run", "production"]
       ports:
         - "127.0.0.1:9000:9000"
+      environment:
+        - APP_VERSION=${APP_VERSION}
