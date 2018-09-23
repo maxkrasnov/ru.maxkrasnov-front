@@ -46,7 +46,7 @@ class MainMenu extends Component {
           <div className={'menu__footer'}>
             <div><b>Исходники:</b></div>
             <a target={'_blank'} href={'https://github.com/maxkrasnov/ru.maxkrasnov-front'}>фронт: {this.props.frontVersion}</a><br/>
-            <a target={'_blank'} href={'https://github.com/maxkrasnov/ru.maxkrasnov'}>бэк: {this.props.backVersion}</a><br/>
+            <a target={'_blank'} href={'https://github.com/maxkrasnov/ru.maxkrasnov.api'}>бэк: {this.props.backVersion}</a><br/>
             &copy; {new Date().getFullYear()}
           </div>
         </div>
