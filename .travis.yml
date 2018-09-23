@@ -13,7 +13,6 @@ branches:
   only:
   - master
 script:
-- echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
 - npm run build
 deploy:
   provider: script
