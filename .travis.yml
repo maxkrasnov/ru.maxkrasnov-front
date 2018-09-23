@@ -13,12 +13,12 @@ branches:
   only:
   - master
 script:
+- echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
 - npm run build
 deploy:
   provider: script
   skip_cleanup: true
   script:
-  - echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
   - ssh $TRAVIS_USER@maxkrasnov.ru 'rm -rf ru.maxkrasnov-front&&git clone https://github.com/maxkrasnov/ru.maxkrasnov-front.git&&cd
     ru.maxkrasnov-front&&make deploy APP_VERSION=$TRAVIS_TAG'
   on:
