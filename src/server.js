@@ -16,10 +16,13 @@ import thunk from './app/redux/middleware/thunk';
 import routesList from './app/routes';
 import defaultPage from './app/utils/defaultPage';
 
+import * as actions from './app/redux/actions/app';
+
 const sm = require('sitemap')
 const webpack = require('webpack');
 const app = express();
 let port = 9000;
+const APP_VERSION = process.env.APP_VERSION;
 
 let sitemap = sm.createSitemap ({
   hostname: 'https://maxkrasnov.ru',
@@ -103,6 +106,8 @@ app.get('*', async (req, res) => {
         }
 
         await component.fetchData({ store, params: (routePath ? routePath.params : {}) });
+
+        store.dispatch(actions.setFrontVersion(APP_VERSION))
         let preloadState = store.getState();
 
         let context = {};
@@ -120,14 +125,13 @@ app.get('*', async (req, res) => {
           res.redirect(context.status, 'http://' + req.headers.host + context.url);
         } else if(routePath === null || routePath.path == '/404') {
           // выдача 404 страницы
-          res.status(404).send(defaultPage(html, preloadState, helmetData))
+          res.status(404).send(defaultPage(html, preloadState, helmetData, APP_VERSION))
         } else {
-          res.send(defaultPage(html, preloadState, helmetData))
+          res.send(defaultPage(html, preloadState, helmetData, APP_VERSION))
         }
-
     } catch (e) {
         console.log(e)
-        res.status(400).send(defaultPage('An error occured.', {}, {}))
+        res.status(400).send(defaultPage('An error occured.', {}, {}, APP_VERSION))
     }
 })
 
