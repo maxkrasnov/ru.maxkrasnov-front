@@ -9,3 +9,4 @@ COPY . .
 
 #запускаем установку зависимостей
 RUN npm install
+RUN npm rebuild node-sass --force
