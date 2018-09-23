@@ -108,7 +108,7 @@ app.get('*', async (req, res) => {
         await component.fetchData({ store, params: (routePath ? routePath.params : {}) });
 
         store.dispatch(actions.setFrontVersion(APP_VERSION))
-        store.dispatch(actions.setBackVersion())
+        await store.dispatch(actions.setBackVersion())
 
         let preloadState = store.getState();
 
