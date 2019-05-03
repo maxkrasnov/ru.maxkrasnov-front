@@ -47,7 +47,7 @@ module.exports = {
       {
         test: /\.(png|xml|json|ico)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: [
-          /(node_modules|bower_components|unitTest|icons|fonts)/,
+          /(node_modules|bower_components|unitTest|fonts)/,
         ],
         use: [{
           loader: 'file-loader',
