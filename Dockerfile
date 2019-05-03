@@ -8,5 +8,5 @@ WORKDIR /app
 COPY . .
 
 #запускаем установку зависимостей
-RUN rm -f package-lock.json && npm install
+RUN npm install
 RUN npm rebuild node-sass --force
