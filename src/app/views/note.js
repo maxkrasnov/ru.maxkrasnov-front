@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
 
 import Page from '../components/page';
 
