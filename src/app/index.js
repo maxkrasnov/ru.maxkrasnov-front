@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import hljs from 'highlight.js';
 import Redirect from './components/redirectRoute';
 import routesList from './routes/index';
 import MainMenu from './components/mainMenu';
