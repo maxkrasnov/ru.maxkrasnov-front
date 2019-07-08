@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import hljs from 'highlight.js';
 
 import Page from '../components/page';
 
@@ -13,6 +14,7 @@ class Note extends Component {
 
   componentDidMount() {
     this.props.getPost(this.props.match.params.code);
+    hljs.initHighlightingOnLoad();
   }
 
   render() {
