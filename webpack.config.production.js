@@ -59,7 +59,7 @@ module.exports = {
         }],
       },
       {
-        test: /\.(scss|css)$/,
+        test: /\.scss$/,
         exclude: [/node_modules/],
         use: [
           {
