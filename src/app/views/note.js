@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
 
 import Page from '../components/page';
 
@@ -14,8 +15,18 @@ class Note extends Component {
 
   componentDidMount() {
     this.props.getPost(this.props.match.params.code);
-    hljs.initHighlightingOnLoad();
+    this.updateHighlighting();
   }
+
+  componentDidUpdate() {
+    this.updateHighlighting();
+  }
+
+  updateHighlighting = () => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  };
 
   render() {
     return (
