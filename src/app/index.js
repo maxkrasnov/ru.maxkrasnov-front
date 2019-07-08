@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import hljs from 'highlight.js';
 import Redirect from './components/redirectRoute';
 import routesList from './routes/index';
 import MainMenu from './components/mainMenu';
 import Page404 from './views/404';
 import Loader from './components/loader';
+
+/* eslint no-unused-vars: [0, {"vars": "hljs"}] */
+
 /**
  * Общий каркас приложения
  */
