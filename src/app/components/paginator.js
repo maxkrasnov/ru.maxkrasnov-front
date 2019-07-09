@@ -12,7 +12,7 @@ class Paginator extends Component {
   getPath = (location) => {
     let { path } = location
     path = path.replace('/page/:page', '')
-    return path
+    return path === '/' ? '' : path
   }
 
   render() {
