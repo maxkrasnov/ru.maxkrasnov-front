@@ -14,7 +14,7 @@
   "author": "Max Krasnov <me@maxkrasnov.ru>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "es6-promise": "^4.2.4",
     "express": "^4.16.3",
     "highlight.js": "^9.15.8",
